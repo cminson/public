@@ -9,6 +9,7 @@
 #
 import os
 import sys
+import time
 import numpy as np
 import cv2
 
@@ -45,6 +46,8 @@ if __name__ == '__main__':
     PATH_INPUT_IMAGE = sys.argv[1] 
     PATH_REGION = sys.argv[2]
     PATH_OUTPUT_IMAGE = sys.argv[3]
+    time_start = time.time()
+
 
     image_input = cv2.imread(PATH_INPUT_IMAGE)
     region_input = cv2.imread(PATH_REGION)
@@ -57,6 +60,10 @@ if __name__ == '__main__':
 
     cv2.imwrite(PATH_OUTPUT_IMAGE, result_image);
     print(PATH_OUTPUT_IMAGE)
+    time_end = time.time()
+    elapsed_time = round((time_end - time_start), 2)
+    print(f'elapsed time: {elapsed_time} seconds')
+
 
 
 

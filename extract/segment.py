@@ -9,7 +9,7 @@
 #
 import os
 import sys
-import cv2
+import time
 import skimage
 import numpy as np
 from PIL import Image
@@ -86,6 +86,7 @@ if __name__ == '__main__':
 
     PATH_INPUT_IMAGE = sys.argv[1]
     PATH_CONVERSION_DIR = sys.argv[2]
+    time_start = time.time()
 
     file_name =  os.path.basename(PATH_INPUT_IMAGE).split('.')[0]
 
@@ -134,5 +135,10 @@ if __name__ == '__main__':
 
     # lastly, compute the background region (negative of all other regions)
     computeBackgroundRegion(file_name, regionFileList)
+    time_end = time.time()
+    elapsed_time = round((time_end - time_start), 2)
+    print(f'elapsed time: {elapsed_time} seconds')
+
+
 
 
