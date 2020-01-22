@@ -1,7 +1,7 @@
 #
-# analyze.py
+# segment.py
 #
-# Identify regions of interest for a given image.
+# Identify regions of interest (image segments) for a given image.
 # Store these regions as black/white masks in the PATH_CONVERSION_DIR directory
 #
 # Author:  Christopher Minson  www.christopherminson.com
