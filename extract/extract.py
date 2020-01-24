@@ -1,7 +1,7 @@
 #
 # extract.py
 #
-# Given regions of interest identified by analyze.py, extract
+# Given regions of interest identified by segment.py, extract
 # those regions from a given image.
 #
 # Author:  Christopher Minson  www.christopherminson.com
