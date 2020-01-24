@@ -24,16 +24,8 @@ def getRegionAttributes(image_region):
 # extract specified region within image
 def extract_region(image, region):
 
-    extracted_image = np.copy(region)
-    rows = region.shape[0]
-    cols = region.shape[1]
-    for row in range(rows):
-        for col in range(cols):
-            if region[row, col][0] == 255:
-                extracted_image[row, col] = image[row, col]
-            else:
-                extracted_image[row, col] = (255, 255, 255)
-
+    extracted_image = cv2.bitwise_and(image, region)
+    extracted_image[extracted_image == 0] = 255
     return extracted_image
 
 
